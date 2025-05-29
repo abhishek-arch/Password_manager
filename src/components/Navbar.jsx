@@ -1,4 +1,5 @@
 import React from 'react'
+import gitlogo from "/icons/github.svg"
 
 const Navbar = () => {
   return (
@@ -19,7 +20,7 @@ const Navbar = () => {
       </ul>
       <button className=' bg-green-300 p-2 rounded-full '>
         <a className='w-xl flex items-center gap-2' href="https://github.com" target='_blank'>
-        <img className='invert' src="/icons/github.svg" alt="" />
+        <img className='invert' src={gitlogo} alt="" />
         GitHub
 
 

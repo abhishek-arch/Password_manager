@@ -1,4 +1,5 @@
 import React from 'react'
+import heartlogo from "/icons/Heart.png"
 
 const Footer = () => {
   return (
@@ -9,7 +10,7 @@ const Footer = () => {
         <span className='text-green-300 ml-1'>OP /&gt;</span>
         </div>
       <div className='flex'>
-        Created with <img src="#" alt="heart" /> by Abhi
+        Created with <img width={32} src={heartlogo} alt="heart" /> by Abhi
       </div>
     </div>
   )

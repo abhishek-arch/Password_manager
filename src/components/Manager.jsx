@@ -2,6 +2,12 @@ import React, { use } from "react";
 import { useRef, useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { v4 as uuidv4 } from "uuid";
+import editlogo from "/icons/Edit.mp4"
+import eyelogo from "/icons/eye.svg"
+import eyecrosslogo from "/icons/eyecross.svg"
+import deletelogo from "/icons/Delete.svg"
+
+import copylogo from "/icons/copy.mp4"
 
 const Manager = () => {
   const [form, setForm] = useState({ site: "", username: "", password: "" });
@@ -41,12 +47,12 @@ const Manager = () => {
   const eyeref = useRef();
   const passwordref = useRef();
   const showpassword = () => {
-    if (eyeref.current.src.includes("/icons/eyecross.svg")) {
+    if (eyeref.current.src.includes(eyecrosslogo)) {
       passwordref.current.type = "text";
-      eyeref.current.src = "/icons/eye.svg";
+      eyeref.current.src = eyelogo;
     } else {
       passwordref.current.type = "password";
-      eyeref.current.src = "/icons/eyecross.svg";
+      eyeref.current.src = eyecrosslogo;
     }
   };
   const savePassword = async() => {
@@ -193,7 +199,7 @@ const Manager = () => {
             className="text-red-500 absolute right-5 cursor-pointer"
             onClick={showpassword}
           >
-            <img ref={eyeref} src="/icons/eye.svg" alt="" />
+            <img ref={eyeref} src={eyelogo} alt="" />
           </span>
         </div>
 
@@ -233,7 +239,7 @@ const Manager = () => {
                       <img
                         className="w-8 cursor-pointer"
                         onClick={() => copyText(item.site)}
-                        src="/icons/copy.mp4"
+                        src= {copylogo}
                         alt=""
                       />
                     </td>
@@ -244,7 +250,7 @@ const Manager = () => {
                         <img
                           className="w-8 cursor-pointer"
                           onClick={() => copyText(item.username)}
-                          src="/icons/copy.mp4"
+                          src={copylogo}
                           alt=""
                         />
                       </div>
@@ -254,7 +260,7 @@ const Manager = () => {
                       <img
                         className="w-8 cursor-pointer"
                         onClick={() => copyText(item.password)}
-                        src="/icons/copy.mp4"
+                        src={copylogo}
                         alt=""
                       />
                     </td>
@@ -264,13 +270,13 @@ const Manager = () => {
                           className="cursor-pointer"
                           onClick={() => Deletepassword(item.id)}
                         >
-                          <img className="w-6" src="/icons/Delete.svg" alt="" />
+                          <img className="w-6" src={deletelogo} alt="" />
                         </span>
                         <span
                           className="cursor-pointer"
                           onClick={() => Editpassword(item.id)}
                         >
-                          <img className="w-8 " src="/icons/Edit.gif" alt="" />
+                          <img className="w-8 " src={editlogo} alt="" />
                         </span>
                       </div>
                     </td>
