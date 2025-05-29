@@ -1,8 +1,10 @@
 import express from "express"
 import cors from "cors"
 import {MongoClient} from "mongodb"
-
+import { configDotenv } from "dotenv"
+configDotenv.config()
 const app = express()
+
 const port = 3000
 app.use (cors())
 
